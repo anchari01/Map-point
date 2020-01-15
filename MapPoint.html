@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Map point with lat/long</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/gb/gb-all.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/th/th-all.js"></script>
+<div id="container"></div>
+
+<script>
+// Initiate the chart
+Highcharts.mapChart('container', {
+
+chart: {
+    map: 'countries/th/th-all'
+},
+
+title: {
+    text: 'Highmaps basic lat/lon demo'
+},
+
+mapNavigation: {
+    enabled: true
+},
+
+tooltip: {
+    headerFormat: '',
+    pointFormat: '<b>{point.name}</b><br>Lat: {point.lat}, Lon: {point.lon}'
+},
+
+series: [{
+    // Use the gb-all map with no data as a basemap
+    name: 'Basemap',
+    borderColor: '#707070',
+    nullColor: 'rgba(200, 200, 200, 0.3)',
+    showInLegend: false
+}, {
+    name: 'Separators',
+    type: 'mapline',
+    nullColor: '#707070',
+    showInLegend: false,
+    enableMouseTracking: false
+}, {
+    // Specify points using lat/lon
+    type: 'mappoint',
+    name: 'Cities',
+    color: Highcharts.getOptions().colors[1],
+    data: [{
+        name: 'กรุงเทพ',
+        lat: 13.757791,
+        lon: 100.498482
+    }, {
+        name: 'ปทุมธานี',
+        lat: 14.015563,
+        lon: 100.548188
+    }, {
+        name: 'นนทบุรี',
+        lat: 13.861570,
+        lon: 100.509550
+    }, {
+        name: 'นครปฐม',
+        lat: 13.812652,
+        lon: 100.070959
+        },{ 
+        name: 'สมุทรปราการ',
+        lat: 13.593988,
+        lon: 100.599325
+        },{
+        name: 'สมุทรสาคร',
+        lat: 13.541433, 
+        lon: 100.267929
+        },{
+        name: 'สมุทรสงคราม',
+        lat: 13.408164,  
+        lon: 99.984848
+        },{
+        name: 'ราชบุรี',
+        lat: 13.527214,   
+        lon: 99.791198
+        },{
+        name: 'กาญจนบุรี',
+        lat: 14.015651,   
+        lon: 99.566784
+        },{
+        name: 'เพชรบุรี',
+        lat: 12.958622,  
+        lon: 99.632577
+        },{
+        name: 'ประจวบตีรีขันธ์',
+        lat: 11.817797,   
+        lon: 99.763127
+        },{
+        name: 'ชุมพร',
+        lat: 10.502140,   
+        lon: 99.181899
+        },{
+        name: 'สุราษฏร์ธานี',
+        lat: 9.132120,   
+        lon: 99.285904
+        },{
+        name: 'พังงา',
+        lat: 8.463683,   
+        lon: 98.512219
+        },{
+        name: 'กระบี่',
+        lat: 8.080457,   
+        lon: 98.897614
+        },{
+        name: 'นครศรีธรรมราช',
+        lat: 8.427465,  
+        lon: 99.949996
+        },{
+        name: 'ตรัง',
+        lat: 7.551717,   
+        lon: 99.600771
+        },{
+        name: 'พัทลุง',
+        lat: 7.609202,   
+        lon: 100.077868
+        },{
+        name: 'สงขลา',
+        lat: 7.176768,   
+        lon: 100.590699
+        },{
+        name: 'สตูล',
+        lat: 6.620435,   
+        lon: 100.065029
+        },{
+        name: 'ปัตตานี',
+        lat: 6.766235,   
+        lon: 101.338666
+        },{
+        name: 'ยะลา',
+        lat: 6.532688,   
+        lon: 101.267231
+        },{
+        name: 'นราธิวาส',
+        lat: 6.424583,   
+        lon: 101.812240
+        },{
+        name: 'สุพรรณบุรี',
+        lat: 14.481083,   
+        lon: 100.136435
+        },{
+        name: 'อยุธยา',
+        lat: 14.332103,   
+        lon: 100.581821
+        },{
+        name: 'สระบุรี',
+        lat: 14.529732,   
+        lon: 100.901980
+        },{
+        name: 'อ่างทอง',
+        lat: 14.591828,   
+        lon: 100.449722
+        },{
+        name: 'สิงห์บุรี',
+        lat: 14.894666,   
+        lon: 100.400394
+        },{
+        name: 'ลพบุรี',
+        lat: 14.805631,   
+        lon: 100.657611
+        },{
+         name: 'ชัยนาท',
+        lat: 15.177645,   
+        lon: 100.140534
+        },{
+         name: 'อุทัยธานี',
+        lat: 15.389467,   
+        lon: 100.025532
+        },{
+         name: 'นครสวรรค์',
+        lat: 15.684158,   
+        lon: 100.058681
+        },{
+         name: 'พิจิตร',
+        lat: 16.261757,   
+        lon: 100.339768
+        },{
+         name: 'กำแพงเพชร',
+        lat: 16.478088,   
+        lon: 99.529740
+        },{
+         name: 'ตาก',
+        lat: 16.884332,   
+        lon: 99.120219
+        },{
+         name: 'สุโขทัย',
+        lat: 16.996760,   
+        lon: 99.831383
+        },{
+         name: 'อุตรดิตถ์',
+        lat: 17.618717,   
+        lon: 100.137779
+        },{
+         name: 'น่าน',
+        lat: 18.767612,   
+        lon: 100.760328
+        },{
+         name: 'แพร่',
+        lat: 18.145949,   
+        lon: 100.129521
+        },{
+         name: 'ลำปาง',
+        lat: 18.276917,   
+        lon: 99.496458
+        },{
+         name: 'ลำพูน',
+        lat: 18.559479,   
+        lon: 99.000372
+        },{
+         name: 'เชียงใหม่',
+        lat: 18.852890,   
+        lon: 98.904363
+        },{
+         name: 'แม่ฮ่องสอน',
+        lat: 19.298789,   
+        lon: 98.047392
+        },{
+         name: 'เชียงราย',
+        lat: 19.903477,   
+        lon: 99.897891
+        },{
+         name: 'พิษณุโลก',
+        lat: 17.028106,   
+        lon: 100.556674
+        },{
+         name: 'เลย',
+        lat: 17.485923,  
+        lon: 101.711103
+        },{
+         name: 'เพชรบูรณ์',
+        lat: 16.282152,  
+        lon: 101.180428
+        },{
+         name: 'ลพบุรี',
+        lat: 14.797664,  
+        lon: 100.663104
+        },{
+         name: 'นครนายก',
+        lat: 14.204555, 
+        lon: 101.213809
+        },{
+         name: 'ฉะเชิงเทรา',
+        lat: 13.686991, 
+        lon: 101.084221
+        },{
+         name: 'ชลบุรี',
+        lat: 13.348587,   
+        lon: 100.974764
+        },{
+         name: 'ระยอง',
+        lat: 12.695997,   
+        lon: 101.149739
+        },{
+         name: 'จันทบุรี',
+        lat: 12.603419,   
+        lon: 102.106023
+        },{
+         name: 'ตราด',
+        lat: 12.229138,   
+        lon: 102.520105
+        },{
+         name: 'สระแก้ว',
+        lat: 13.823015,   
+        lon: 102.051550
+        },{
+         name: 'ปราจีนบุรี',
+        lat: 14.046257,   
+        lon: 101.667038
+        },{
+         name: 'นครราชสีมา',
+        lat: 14.972422,   
+        lon: 102.118439
+        },{
+         name: 'บุรีรัมย์',
+        lat: 14.981102,  
+        lon: 103.059156
+        },{
+         name: 'ชัยภูมิ',
+        lat: 15.803562,   
+        lon: 102.021995
+        },{
+         name: 'ขอนแก่น',
+        lat: 16.436698,  
+        lon: 102.807707
+        },{
+         name: 'หนองบัวลำภู',
+        lat: 17.206100, 
+        lon: 102.395530  
+        },{
+         name: 'อุดรธานี',
+        lat: 17.399760,  
+        lon: 102.742710
+        },{
+         name: 'หนองคาย',
+        lat: 17.878908, 
+        lon: 102.745567
+        },{
+         name: 'บึงกาฬ',
+        lat: 18.363323,
+        lon: 103.639464
+        },{
+         name: 'สกลนคร',
+        lat: 17.149182,
+        lon: 104.116296
+        },{
+         name: 'นครพนม',
+        lat: 17.384041,
+        lon: 104.751367
+        },{
+         name: 'มุกดาหาร',
+        lat: 16.563345,
+        lon: 104.507446
+        },{
+         name: 'กาฬสินธุ์',
+        lat: 16.422965, 
+        lon: 103.547999
+        },{
+         name: 'มหาสารคาม',
+        lat: 16.018462,
+        lon: 103.157510
+        },{
+         name: 'สุรินทร์',
+        lat: 14.873367,   
+        lon: 103.480528
+        },{
+        name: 'ร้อยเอ็ด',
+        lat: 16.041318,
+        lon: 103.646382
+        },{
+        name: 'ยโสธร',
+        lat: 15.794475,
+        lon: 104.128127
+        },{
+        name: 'อำนาจเจริญ',
+        lat: 15.865535,
+        lon: 104.671262
+        },{
+        name: 'ศรีสะเกษ',
+        lat: 15.116424,
+        lon: 104.333197
+        },{
+        name: 'อุบลราชธานี',
+        lat: 15.230554,
+        lon: 104.821807,
+        dataLabels: {
+            align: 'left',
+            x: 5,
+            verticalAlign: 'middle'
+        }
+    }]
+}]
+});
+	</script>
